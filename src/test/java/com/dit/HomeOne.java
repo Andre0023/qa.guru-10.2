@@ -30,7 +30,7 @@ public class HomeOne {
 
     @Test
     @DisplayName("ввод")
-    void hOne() {
+    void homeWorkOne() {
         open("https://demoqa.com/automation-practice-form");
 
         $("#firstName").setValue("Andrei"); //имя
@@ -45,17 +45,17 @@ public class HomeOne {
 
         $("#dateOfBirthInput").click(); //Дата рождения
         $(".react-datepicker__month-select").click();
-        $("[value='10']").click();
+        $("[value='0']").click();
         $(".react-datepicker__year-select").click();
         $("[value='1992']").click();
-        $(".react-datepicker__day--002").click();
+        $(".react-datepicker__day--011").click();
 
         $("#subjectsInput").setValue("C");
         $(Selectors.byText("Computer Science")).scrollTo().click(); //Subjects
 
         $("[for='hobbies-checkbox-2']").click(); //хобби
 
-        $("#uploadPicture").uploadFile(new File("C:\\Users\\64an\\Pictures\\MY.jpg")); //загрузка фото
+        $("#uploadPicture").uploadFile(new File("src/test/resources/MY.jpg")); //загрузка фото
 
         $("#currentAddress").setValue("New Sol"); //андрес проживания
 
@@ -64,14 +64,8 @@ public class HomeOne {
         $(Selectors.byText("Select City")).click();
         $(Selectors.byText("Karnal")).click();
 
-
         $("#submit").click(); //кнопка отправки
 
-
-    }
-
-    @DisplayName("Проверка")
-    void checkResult() {
         $(byText("Thanks for submitting the form")).should(appear);
         $(byText("Andrei Ivanov")).should(appear);
         $(byText("mail@mail.com")).should(appear);
@@ -85,10 +79,7 @@ public class HomeOne {
         $(byText("Haryana Karnal")).should(appear);
     }
 
-    @AfterEach
-    void after() {
-        closeWebDriver();
-    }
+
 
 }
 
