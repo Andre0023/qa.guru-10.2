@@ -51,7 +51,7 @@ public class HomeOne {
 
 
 
-        $("#subjectsInput").setValue("C");
+        $("#subjectsInput").setValue("Com");
         $(Selectors.byText("Computer Science")).scrollTo().click(); //Subjects
 
         $("[for='hobbies-checkbox-2']").click(); //хобби
@@ -66,6 +66,19 @@ public class HomeOne {
         $(Selectors.byText("Karnal")).click();
 
         $("#submit").click(); //кнопка отправки
+
+        $(".modal-content").shouldHave(
+                text("Student Name"), text("Andrei Ivanov"),
+                text("Student Email"), text("mail@mail.com"),
+                text("Gender"), text("Male"),
+                text("Mobile"), text("9999999999"),
+                text("Date of Birth"), text("11 January,1992"),
+                text("Subjects"), text("Computer Science"),
+                text("Hobbies"), text("Reading"),
+                text("Picture"), text("MY.jpg"),
+                text("Address"), text("New Sol"),
+                text("State and City"), text("Haryana Karnal")
+        );
 
 
     }
