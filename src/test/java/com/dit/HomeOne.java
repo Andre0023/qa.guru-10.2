@@ -44,11 +44,12 @@ public class HomeOne {
         $("#userNumber").setValue("99999999999"); //номер телефона
 
         $("#dateOfBirthInput").click(); //Дата рождения
-        $(".react-datepicker__month-select").click();
-        $("[value='0']").click();
-        $(".react-datepicker__year-select").click();
-        $("[value='1992']").click();
-        $(".react-datepicker__day--011").click();
+        $(".react-datepicker__month-select").selectOption("January");
+        $(".react-datepicker__year-select").selectOption("1992");
+        $("[aria-label$='January 11th, 1992']").click();
+
+
+
 
         $("#subjectsInput").setValue("C");
         $(Selectors.byText("Computer Science")).scrollTo().click(); //Subjects
@@ -66,17 +67,7 @@ public class HomeOne {
 
         $("#submit").click(); //кнопка отправки
 
-        $(byText("Thanks for submitting the form")).should(appear);
-        $(byText("Andrei Ivanov")).should(appear);
-        $(byText("mail@mail.com")).should(appear);
-        $(byText("Male")).should(appear);
-        $(byText("99999999999")).should(appear);
-        $(byText("02 November,1992")).should(appear);
-        $(byText("Computer Science")).should(appear);
-        $(byText("Reading")).should(appear);
-        $(byText("MY.jpg")).should(appear);
-        $(byText("Saint-Pee")).should(appear);
-        $(byText("Haryana Karnal")).should(appear);
+
     }
 
 
