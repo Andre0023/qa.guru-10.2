@@ -24,7 +24,7 @@ public class HomeOnePegeObjects {
 
 
     @DisplayName("ввод")
-    void homeWorkOne() {
+    /*void homeWorkOne() {
         registrationPage.openPage();
 
         registrationPage.typeFirstName("Andrei"); //имя
@@ -71,7 +71,8 @@ public class HomeOnePegeObjects {
                 text("Address"), text("New Sol"),
                 text("State and City"), text("Haryana Karnal")
         );
-    }
+    }*/
+    @Test
         void homeWorkOneDs() {
             registrationPage.openPage()
             .typeFirstName("Andrei") //имя
@@ -85,10 +86,7 @@ public class HomeOnePegeObjects {
 
             $("#userNumber").setValue("99999999999"); //номер телефона
 
-            $("#dateOfBirthInput").click(); //Дата рождения
-            $(".react-datepicker__month-select").selectOption("January");
-            $(".react-datepicker__year-select").selectOption("1992");
-            $("[aria-label$='January 11th, 1992']").click();
+            registrationPage.calendarComponent.setDate("30", "January", "1992");
 
 
 
@@ -110,10 +108,15 @@ public class HomeOnePegeObjects {
             $("#submit").click(); //кнопка отправки
 
             registrationPage.cherkResultValue("Student Name","Andrei Ivanov")
-                            .cherkResultValue("Student Name","Andrei Ivanov")
-                            .cherkResultValue("Student Name","Andrei Ivanov")
-                            .cherkResultValue("Student Name","Andrei Ivanov")
-                            .cherkResultValue("Student Name","Andrei Ivanov");
+                            /*.cherkResultValue("Student Email","mail@mail.com")
+                            .cherkResultValue("Gender","Male")
+                            .cherkResultValue("Mobile","9999999999")
+                            .cherkResultValue("Date of Birth","11 January,1992")
+                            .cherkResultValue("Subjects","Computer Science")
+                            .cherkResultValue("Hobbies","Reading")
+                            .cherkResultValue("Picture","MY.jpg")
+                            .cherkResultValue("Address","New Sol")
+                            .cherkResultValue("State and City","Haryana Karnal")*/;
 
     }
 

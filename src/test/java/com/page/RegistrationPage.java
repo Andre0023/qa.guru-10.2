@@ -1,6 +1,7 @@
 package com.page;
 
 import com.codeborne.selenide.SelenideElement;
+import com.page.components.CalendarComponent;
 
 import java.nio.channels.SelectableChannel;
 
@@ -15,6 +16,8 @@ public class RegistrationPage {
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             resultsTable =  $(".modal-content");
+
+    public CalendarComponent calendarComponent = new CalendarComponent();
 
 
     public RegistrationPage openPage(){
@@ -39,15 +42,15 @@ public class RegistrationPage {
     public RegistrationPage  cherkResultValue(String key, String value){
         resultsTable.shouldHave(
                 text(key), text(value),
-                text("Student Email"), text("mail@mail.com"),
-                text("Gender"), text("Male"),
-                text("Mobile"), text("9999999999"),
-                text("Date of Birth"), text("11 January,1992"),
-                text("Subjects"), text("Computer Science"),
-                text("Hobbies"), text("Reading"),
-                text("Picture"), text("MY.jpg"),
-                text("Address"), text("New Sol"),
-                text("State and City"), text("Haryana Karnal")
+                text(key), text(value),//Email
+                text(key), text(value),//Gender
+                text(key), text(value),//Mobile
+                text(key), text(value),//Date of Birth
+                text(key), text(value),//Subjects
+                text(key), text(value),//Hobbies
+                text(key), text(value),//Picture
+                text(key), text(value),//Address
+                text(key), text(value)//State and City
         );
 
         return this;
