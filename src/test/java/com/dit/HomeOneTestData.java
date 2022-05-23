@@ -1,44 +1,34 @@
 package com.dit;
 
-import org.junit.jupiter.api.AfterEach;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
-import org.junit.jupiter.api.BeforeAll;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selectors;
-import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.visible;
-
 import java.io.File;
 
-import com.codeborne.selenide.CollectionCondition;
-
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Condition.appear;
-import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
+import static com.dit.TestData.userEmail;
 
-public class HomeOne {
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
-        open("https://demoqa.com/automation-practice-form");
-    }
+public class HomeOneTestData extends testBase{
+    String firstName = "Andrei",
+            lastName = "Ivanov";
+
 
     @Test
     @DisplayName("ввод")
     void homeWorkOne() {
 
 
-        $("#firstName").setValue("Andrei"); //имя
 
-        $("#lastName").setValue("Ivanov"); //фамилия
+        $("#firstName").setValue(firstName); //имя
 
-        $("#userEmail").setValue("mail@mail.com"); //почта
+        $("#lastName").setValue(lastName); //фамилия
+
+        $("#userEmail").setValue(userEmail); //почта
 
         $("[for='gender-radio-1']").click(); //выбор пола
 
@@ -69,7 +59,7 @@ public class HomeOne {
         $("#submit").click(); //кнопка отправки
 
         $(".modal-content").shouldHave(
-                text("Student Name"), text("Andrei Ivanov"),
+                text("Student Name"), text(firstName + " " + lastName),
                 text("Student Email"), text("mail@mail.com"),
                 text("Gender"), text("Male"),
                 text("Mobile"), text("9999999999"),
