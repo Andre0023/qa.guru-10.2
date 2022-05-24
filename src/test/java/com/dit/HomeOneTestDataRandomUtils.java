@@ -1,8 +1,6 @@
 //package com.dit;
 //
-//import com.codeborne.selenide.Configuration;
 //import com.codeborne.selenide.Selectors;
-//import org.junit.jupiter.api.BeforeAll;
 //import org.junit.jupiter.api.DisplayName;
 //import org.junit.jupiter.api.Test;
 //
@@ -10,12 +8,14 @@
 //
 //import static com.codeborne.selenide.Condition.text;
 //import static com.codeborne.selenide.Selenide.$;
-//import static com.codeborne.selenide.Selenide.open;
 //import static com.dit.TestData.userEmail;
+//import static com.dit.utils.RandomUtils.getRandomString;
 //
-//public class HomeOneTestData extends testBase{
-//    String firstName = "Andrei",
-//            lastName = "Ivanov";
+//public class HomeOneTestDataRandomUtils extends testBase{
+//    String firstName = getRandomString(8);
+//    String  lastName = "Ivanov";
+//
+//
 //
 //
 //    @Test
